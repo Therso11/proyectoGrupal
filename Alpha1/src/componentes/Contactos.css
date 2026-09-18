@@ -1,0 +1,175 @@
+:root {
+  --verde-900: #0c3b2e;
+  --verde-700: #14532d;
+  --verde-500: #228b55;
+  --verde-300: #6fcf97;
+  --verde-100: #e6f5ec;
+  --oro: #c9a24b;
+}
+
+.contactos {
+  padding: 48px 24px 80px;
+  background: linear-gradient(160deg, var(--verde-900) 0%, var(--verde-700) 100%);
+  color: #f4fbf6;
+  text-align: center;
+}
+
+.contactos__titulo {
+  font-size: 34px;
+  margin: 0 0 8px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.contactos__intro {
+  margin: 0 auto 40px;
+  max-width: 480px;
+  color: var(--verde-100);
+  opacity: 0.85;
+}
+
+.contactos__cascada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Estilo cascada */
+.contacto-card {
+  width: min(400px, 90%);
+  background: linear-gradient(150deg, #ffffff 0%, #f3faf5 65%, #e2f3e9 100%);
+  color: var(--verde-900);
+  border-radius: 16px;
+  padding: 22px 24px;
+  text-align: left;
+  box-shadow:
+    0 18px 30px rgba(8, 36, 24, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(34, 139, 85, 0.25);
+  transform: translateY(calc(var(--i) * 18px)) scale(calc(1 - var(--i) * 0.02));
+  z-index: calc(10 - var(--i));
+  margin-top: calc(var(--i) * 58px);
+  position: relative;
+}
+
+.contacto-card:not(:first-child) {
+  margin-top: calc(var(--i) * -32px + 58px);
+}
+
+.contacto-card__perfil {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed rgba(11, 16, 13, 0.3);
+}
+
+.contacto-card__inicial {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  background: radial-gradient(circle at 30% 30%, var(--verde-300), var(--verde-500));
+  box-shadow: 0 6px 12px rgba(20, 83, 45, 0.35);
+}
+
+.contacto-card__nombre {
+  margin: 0;
+  font-size: 19px;
+  color: var(--verde-900);
+}
+
+.contacto-card__cargo {
+  font-size: 13px;
+  color: var(--verde-500);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.contacto-card__datos {
+  list-style: none;
+  margin: 14px 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.contacto-card__dato {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  align-items: baseline;
+  font-size: 14.5px;
+  gap: 8px;
+}
+
+.contacto-card__etiqueta {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--oro);
+  font-weight: 600;
+}
+
+.contacto-card__dato a {
+  color: var(--verde-700);
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+.contacto-card__dato a:hover {
+  color: var(--verde-500);
+  text-decoration: underline;
+}
+
+.contacto-card__redes {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.contacto-card__red {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--verde-100);
+  border: 1px solid rgba(34, 139, 85, 0.25);
+  color: var(--verde-700);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contacto-card__red svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.contacto-card__red:hover {
+  transform: translateY(-3px);
+  background: var(--verde-500);
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(20, 83, 45, 0.35);
+}
+
+@media (max-width: 640px) {
+  .contactos {
+    padding: 32px 16px 64px;
+  }
+  .contactos__titulo {
+    font-size: 26px;
+  }
+  .contacto-card__dato {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
